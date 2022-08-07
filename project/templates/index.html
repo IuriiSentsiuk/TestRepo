@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Owned cash</th>
+                <th scope="col">Pension savings</th>
+                <th scope="col">Min cash</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Monthly cash expenses</th>
+                <th scope="col">Monthly pension expenses</th>
+                <th scope="col">Retirement date</th>
+                <th scope="col">Retirement savings</th>
+            </tr>
+        </thead>
+       
+        <tbody>
+        {% for row in users_db%}
+            <tr>
+                <td>{{ row["username"] }}</td>
+                <td>{{ row["cash"] }}</td>
+                <td>{{ row["pension_savings"] }}</td>
+                <td>{{ row["min_cash"] }}</td>
+                <td>{{ row["salary"] }}</td>
+                <td>{{ row["monthly_cash_expenses"] }}</td>
+                <td>{{ row["monthly_pension_expenses"] }}</td>
+                <td>{{ row["pension_date"] }}</td>
+                <td>{{ row["pension_start_savings"] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+{% endblock %}

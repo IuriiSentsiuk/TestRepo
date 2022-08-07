@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Retirement
+{% endblock %}
+
+{% block main %}
+    <h1>Retirement</h1>
+    <form action="/pension" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="new_pension_savings" placeholder="Pension savings" type="number">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="new_pension_start_savings" placeholder="Retirement savings" type="number">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="new_pension_date" placeholder="Retirement date" type="date">
+        </div>
+        
+        <button class="btn btn-primary" type="submit">Add Pension</button>
+    </form>
+{% endblock %}
+

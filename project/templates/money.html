@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change income and expense information
+{% endblock %}
+
+{% block main %}
+    <h1>Change income and expense information</h1>
+    <form action="/add_money_info" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="new_min_cash" placeholder="Min cash" type="number">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="new_pension_savings" placeholder="Pension savings" type="number">
+        </div>   
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="new_salary" placeholder="Salary" type="number">
+        </div>
+            
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="new_monthly_cash_expenses" placeholder="Monthly expenses" type="number">
+        </div>
+            
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="new_monthly_pension_expenses" placeholder="Pension expenses" type="number">
+        </div>
+            
+
+        <button class="btn btn-primary" type="submit">Add money</button>
+    </form>
+{% endblock %}

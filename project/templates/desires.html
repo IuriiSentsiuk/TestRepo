@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Desire
+{% endblock %}
+
+{% block main %}
+    
+    <form action="/add_desire" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="desire" placeholder="Add your desire" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="desire_price" placeholder="Add desire price" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Add data</button>
+    </form>
+    <h3>Desires</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Desire</th>
+                <th scope="col">Desire price</th>
+                <th scope="col">Estimated months to purchase</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for row in desires_db%}
+            <tr>
+                <td>{{ row["desire"] }}</td>
+                <td>{{ row["desire_price"] }}</td>  
+                <td>{{ row["estimated_months"] }}</td>
+                <td>
+                    <form action="/buy_desire" method="post">
+                        <input name="desire_id" type="hidden" value="{{ row.desire_id }}">
+                        <input type="submit" value="Buy Desire">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
